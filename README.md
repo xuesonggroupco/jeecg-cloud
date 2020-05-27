@@ -23,6 +23,10 @@ Jeecg-Cloud 快速开发平台
 - 9、Spring Boot Admin服务监控
 - 10、链路跟踪 skywalking
 
+## 架构图
+
+![输入图片说明](https://static.jeecg.com/upload/test/jeecg-cloud%20%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%9B%BE_1590561586643.png "在这里输入图片标题")
+
 ## 技术架构
 - 基础框架：Spring Boot 2.1.3.RELEASE
 -  Spring Cloud Greenwich.SR3
@@ -81,6 +85,7 @@ jeecg-cloud
 ```
 http://localhost:9999/doc.html
 ```
+
 
 ### 测试请求
 

@@ -17,15 +17,16 @@ Jeecg-Cloud 快速开发平台
 - 3、熔断降级限流 sentinel
 - 4、feign配合sentinel使用
 - 5、SpringCloud Gateway
-- 6、服务监控 actuator
-- 7、Shiro+Jwt 权限控制
-- 8、分布式文件系统 minio、阿里OSS
+- 6、JWT + Shiro 权限控制
+- 7、分布式文件系统 Minio、阿里OSS
+- 8、服务监控 actuator
 - 9、Spring Boot Admin服务监控
-- 10、链路跟踪 skywalking
+- 10、链路跟踪 SkyWalking
 
 ## 架构图
 
 ![输入图片说明](https://static.jeecg.com/upload/test/jeecg-cloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%9B%BE%20mini_1590566044258.png "在这里输入图片标题")
+
 
 ## 技术架构
 - 基础框架：Spring Boot 2.1.3.RELEASE
@@ -85,7 +86,10 @@ jeecg-cloud
 ```
 http://localhost:9999/doc.html
 ```
-
+### Admin监控
+```
+http://localhost:9111 (admin/admin)
+```
 
 ### 测试请求
 

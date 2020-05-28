@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>jeecg-cloud-system-biz</artifactId>
-
-    <parent>
+	<parent>
+		<artifactId>jeecg-cloud-system</artifactId>
 		<groupId>org.jeecgframework.cloud</groupId>
-		<artifactId>jeecg-cloud</artifactId>
 		<version>2.2.0</version>
 	</parent>
 

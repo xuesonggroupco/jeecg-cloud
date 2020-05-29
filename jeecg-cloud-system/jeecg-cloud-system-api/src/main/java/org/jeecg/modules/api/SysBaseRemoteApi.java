@@ -4,13 +4,10 @@ import com.alibaba.fastjson.JSONObject;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.constant.ServiceNameConstants;
 import org.jeecg.common.system.vo.LoginUser;
-import org.jeecg.modules.system.entity.SysPermissionDataRule;
+import org.jeecg.modules.api.factory.SysBaseRemoteApiFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Set;
 
 /**
  * @Description: TODO
@@ -18,7 +15,7 @@ import java.util.Set;
  * @date: 2020年05月21日 14:32
  */
 @Component
-@FeignClient(contextId = "sysBaseRemoteApi", value = ServiceNameConstants.SYSTEM_SERVICE)
+@FeignClient(contextId = "sysBaseRemoteApi", value = ServiceNameConstants.SYSTEM_SERVICE, fallbackFactory = SysBaseRemoteApiFallbackFactory.class)
 public interface SysBaseRemoteApi {
 
     @GetMapping("/sys/user/info/{username}")

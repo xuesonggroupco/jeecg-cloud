@@ -1,6 +1,6 @@
 spring:
   redis:
-    host: 127.0.0.1
+    host: jeecg-cloud-redis
     password: ''
     port: 6379
   cloud:
@@ -36,7 +36,7 @@ spring:
         - id: jeecg-cloud-system-biz
           uri: lb://jeecg-cloud-system-biz
           predicates:
-          - Path=/sys/**,/test/**,/online/**,/api/**,/big/screen/**,/bigscreen/**,/webSocketApi/**
+          - Path=/sys/**,/test/**,/online/**,/api/**,/big/screen/**,/bigscreen/**,/webSocketApi/**,/message/**
           #限流配置
           filters:
           - name: RequestRateLimiter

@@ -53,4 +53,9 @@ public interface CacheConstant {
 	 */
 	public static final String SYS_DYNAMICDB_CACHE = "sys:cache:dbconnect:dynamic:";
 
+	/**
+	 * gateway路由缓存
+	 */
+	public static final String GATEWAY_ROUTES = "geteway_routes";
+
 }

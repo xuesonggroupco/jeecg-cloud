@@ -117,3 +117,20 @@ http://localhost:9999/demo/hello
 	"username": "admin"
 }
  ```
+ 
+ 
+### Docker Compose 镜像制作
+ ``` 
+# 1.先进行项目打包
+mvn clean package
+
+# 2.重新构建镜像__容器组（当你改变本地代码）
+docker-compose build
+
+# 3.取代运行中的镜像__容器组
+docker-compose up -d
+
+# 4.nacos中创建俩配置文件
+参考：doc/NACOSCONFIG
+``` 
+

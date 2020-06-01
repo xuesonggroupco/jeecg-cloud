@@ -1,8 +1,11 @@
 package org.jeecg.modules.test.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.jeecg.common.api.vo.Result;
+import org.jeecg.common.system.vo.LoginUser;
+import org.jeecg.modules.api.SysBaseRemoteApi;
 import org.jeecg.modules.test.client.UserServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +23,16 @@ import javax.servlet.http.HttpServletRequest;
 public class NacosDemoController {
     @Autowired
     UserServiceClient userServiceClient;
+    @Autowired
+    SysBaseRemoteApi sysBaseRemoteApi;
 //    @Autowired
 //    DemoUserMapper demoUserMapper;
 
     @GetMapping("/hello")
     public String hello(){
-        return "hello world , my name is Nacos Demo";
+        LoginUser user = (LoginUser) SecurityUtils.getSubject().getPrincipal();
+        Result<LoginUser> result = sysBaseRemoteApi.getUserByName(user.getUsername());
+        return "hello world , my name is "+result.getResult().getUsername();
     }
 
     //@RequiresPermissions("user:edit")

@@ -56,6 +56,7 @@ services:
   jeecg-cloud-monitor:
     build:
       context: ./jeecg-cloud-monitor
+    restart: always
     ports:
       - 9111:9111
     container_name: jeecg-cloud-monitor

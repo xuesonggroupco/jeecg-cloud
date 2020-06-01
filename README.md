@@ -118,7 +118,6 @@ http://localhost:9999/demo/hello
 }
  ```
  
- 
 ### Docker Compose 镜像制作
  ``` 
 # 1.先进行项目打包
@@ -134,3 +133,19 @@ docker-compose up -d
 参考：doc/NACOSCONFIG
 ``` 
 
+
+### Docker其他命令备用
+ ``` 
+# 创建单个镜像
+docker build -t jeecg-system/centos:v1 . 
+# 启动单个镜像
+docker run -p 8001:8001 jeecg-system/centos:v1
+
+# 登录数据库
+mysql -u root -p
+use jeecg-cloud
+show tables
+
+
+自定义Docker容器的 hostname
+ ``` 

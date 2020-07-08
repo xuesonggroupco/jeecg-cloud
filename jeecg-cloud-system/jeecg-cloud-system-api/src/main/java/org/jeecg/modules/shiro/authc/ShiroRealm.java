@@ -112,7 +112,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		}
 
 		// 查询用户信息
-		log.info("———校验token是否有效————checkUserTokenIsEffect——————— "+ token);
+		log.debug("———校验token是否有效————checkUserTokenIsEffect——————— "+ token);
 		//采用缓存方式获取登录用户信息，提高并发性能（gateway）
         //LoginUser loginUser = sysBaseRemoteApi.getUserByName(username).getResult();
 		LoginUser loginUser = (LoginUser) redisUtil.get(CacheConstant.SYS_USERS_CACHE_JWT+":"+token);

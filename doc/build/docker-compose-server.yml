@@ -1,13 +1,24 @@
+#### 镜像上传
+# 192.168.1.11:5000
+# docker仓库
+#docker tag jeecg-cloud-mysql 192.168.1.11:5000/jeecg-cloud-mysql:1.0
+#docker tag jeecg-cloud-gateway 192.168.1.11:5000/jeecg-cloud-gateway:1.0
+#docker tag jeecg-cloud-system 192.168.1.11:5000/jeecg-cloud-system:1.0
+#docker tag jeecg-cloud-demo 192.168.1.11:5000/jeecg-cloud-demo:1.0
+#
+#docker push 192.168.1.11:5000/jeecg-cloud-mysql:1.0
+#docker push 192.168.1.11:5000/jeecg-cloud-gateway:1.0
+#docker push 192.168.1.11:5000/jeecg-cloud-system:1.0
+#docker push 192.168.1.11:5000/jeecg-cloud-demo:1.0
+
 version: '2'
 services:
   jeecg-cloud-mysql:
-    build:
-      context: ./doc/db
+    image: 192.168.1.11:5000/jeecg-cloud-mysql:1.0
     environment:
       MYSQL_ROOT_PASSWORD: root
     restart: always
     container_name: jeecg-cloud-mysql
-    image: jeecg-cloud-mysql
     command:
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_general_ci
@@ -18,7 +29,7 @@ services:
       - 3306:3306
 
   jeecg-cloud-redis:
-    image: redis:5.0
+    image: redis:5
     ports:
       - 6379:6379
     restart: always
@@ -26,8 +37,8 @@ services:
     hostname: jeecg-cloud-redis
 
   jeecg-cloud-nacos:
-    restart: always
     image: nacos/nacos-server
+    restart: always
     container_name: jeecg-cloud-nacos
     hostname: jeecg-cloud-nacos
     ports:
@@ -36,37 +47,29 @@ services:
       MODE: standalone
 
   jeecg-cloud-gateway:
-    build:
-      context: ./jeecg-cloud-gateway
+    image: 192.168.1.11:5000/jeecg-cloud-gateway:1.0
     restart: always
     ports:
       - 9999:9999
     container_name: jeecg-cloud-gateway
     hostname: jeecg-cloud-gateway
-    image: jeecg-cloud-gateway
 
   jeecg-cloud-system:
-    build:
-      context: ./jeecg-cloud-system/jeecg-cloud-system-biz
+    image: 192.168.1.11:5000/jeecg-cloud-system:1.0
     restart: always
     container_name: jeecg-cloud-system
     hostname: jeecg-cloud-system
-    image: jeecg-cloud-system
 
-#  jeecg-cloud-monitor:
-#    build:
-#      context: ./jeecg-cloud-monitor
-#    restart: always
-#    ports:
-#      - 9111:9111
-#    container_name: jeecg-cloud-monitor
-#    hostname: jeecg-cloud-monitor
-#    image: jeecg-cloud-monitor
+  jeecg-cloud-monitor:
+    image: 192.168.1.11:5000/jeecg-cloud-monitor:1.0
+    restart: always
+    ports:
+      - 9111:9111
+    container_name: jeecg-cloud-monitor
+    hostname: jeecg-cloud-monitor
 
   jeecg-cloud-demo:
-    build:
-      context: ./jeecg-cloud-demo/jeecg-cloud-demo-biz
+    image: 192.168.1.11:5000/jeecg-cloud-demo:1.0
     restart: always
     container_name: jeecg-cloud-demo
     hostname: jeecg-cloud-demo
-    image: jeecg-cloud-demo

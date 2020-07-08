@@ -342,14 +342,14 @@ public class LoginController {
 		String token = JwtUtil.sign(username, syspassword);
         // 设置token缓存有效时间
 		redisUtil.set(CommonConstant.PREFIX_USER_TOKEN + token, token);
-
+		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME*2 / 1000);
 		//------------------------------------------------------------------------------------------
 		LoginUser vo = new LoginUser();
 		BeanUtils.copyProperties(sysUser,vo);
 		vo.setPassword(SecureUtil.md5(sysUser.getPassword()));
 		redisUtil.set(CacheConstant.SYS_USERS_CACHE_JWT +":" +token, vo);
+		redisUtil.expire(CacheConstant.SYS_USERS_CACHE_JWT +":" +token, JwtUtil.EXPIRE_TIME*2 / 1000);
 		//------------------------------------------------------------------------------------------
-		redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME*2 / 1000);
 
 		// 获取用户部门信息
 		JSONObject obj = new JSONObject();

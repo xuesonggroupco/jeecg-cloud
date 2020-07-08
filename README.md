@@ -3,11 +3,11 @@ Jeecg-Cloud 快速开发平台
 
 当前最新版本： 1.0.0-beta（发布日期：****）
 
-- 基于Spring Boot 2.1.3、 Spring Cloud Greenwich.SR3 & Alibaba、 Shiro、Jwt的快速开发平台
+- 基于Spring Boot 2.1.3、 Spring Cloud Greenwich.SR3 & Alibaba、 Shiro、JWT 的快速开发平台
 - 前端采用 ant-design-vue，简单易用封装各种组件，轻松满足企业级项目需求
 - 更多功能介绍，请参考 [JeecgBoot版本](https://github.com/zhangdaiscott/jeecg-boot)
 
-<a href="http://doc.cloud.jeecg.com" target="_blank">部署文档</a>  | <a target="_blank" href="http://boot.jeecg.com"> 在线体验</a> | <a target="_blank" href="http://www.jeecg.com"> 官方网站</a> 
+    <a href="http://doc.cloud.jeecg.com" target="_blank">部署文档</a>  | <a href="https://www.bilibili.com/video/BV1pV411r7xW" target="_blank">入门视频</a>  |  <a target="_blank" href="http://boot.jeecg.com"> 在线体验</a> | <a target="_blank" href="http://www.jeecg.com"> 官方网站</a> 
 
 ### 技术体系
 
@@ -22,10 +22,18 @@ Jeecg-Cloud 快速开发平台
 - 8、服务监控 actuator
 - 9、Spring Boot Admin服务监控
 - 10、链路跟踪 SkyWalking
+- 11、Spring Cloud Stream+RabbitMQ
+- 12、分布式事务 Seata
+- 13、分布式定时任务 XXL-JOB
+- 14、ELK分布式日志
+- 15、支持 jenkins、docker-compose、k8s
 
-## 架构图
+## 系统架构图
 
 ![输入图片说明](https://static.jeecg.com/upload/test/jeecg-cloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%9B%BE%20mini_1590566044258.png "在这里输入图片标题")
+
+## 项目关系图
+![](https://static.jeecg.com/upload/test/jeecg_cloud_project_ref_1591173131283.png)
 
 
 ## 技术架构

@@ -16,6 +16,17 @@ import java.util.List;
 public class GatewayUtils {
 
     /**
+     * redis reload 事件
+     */
+    public static final String ROUTE_REDIS_RELOAD_TOPIC = "gateway_redis_route_reload_topic";
+
+    /**
+     * 内存reload 时间
+     */
+    public static final String ROUTE_JVM_RELOAD_TOPIC = "gateway_jvm_route_reload_topic";
+
+
+    /**
      *  redis中的信息需要处理下 转成RouteDefinition对象
      *         - id: login
      *           uri: lb://cloud-jeecg-system

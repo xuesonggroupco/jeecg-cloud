@@ -58,4 +58,10 @@ public interface CacheConstant {
 	 */
 	public static final String GATEWAY_ROUTES = "geteway_routes";
 
+
+	/**
+	 * gateway路由 reload key
+	 */
+	public static final String ROUTE_JVM_RELOAD_TOPIC = "gateway_jvm_route_reload_topic";
+
 }
